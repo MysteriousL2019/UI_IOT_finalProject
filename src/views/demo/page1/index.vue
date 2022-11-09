@@ -8,7 +8,7 @@
 
       <!-- 这里是， 点进来二级菜单之后 -->
         <el-breadcrumb-item :to="{ path: '/index' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item>Device of statistics</el-breadcrumb-item>
+            <el-breadcrumb-item>Statistics Operation</el-breadcrumb-item>
          </el-breadcrumb>
          
     <el-divider></el-divider>
@@ -99,9 +99,7 @@
 import * as XLSX from 'xlsx'
 import FileSaver from 'file-saver'
 export default{
-     created(){
-      // this.getDeviceList();
-    },
+
     data(){
         return {
              // 查询信息的实体
