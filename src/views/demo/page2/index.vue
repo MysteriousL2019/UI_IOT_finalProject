@@ -10,7 +10,7 @@
 
     <el-card>
       <el-row :gutter="30">
-         <el-col :span="7">
+         <el-col :span="9">
             <!-- <div class="block" > -->
                 <el-date-picker
                 v-model="queryInfo.date"
@@ -59,7 +59,7 @@ export default {
               query:"",//查询信息
               pageNum:1,//当前页
               pageSize:5,//每页的最大数
-              date:["2022-05-01 00:00:00","2022-11-21 08:00:00"],//"yyyy-MM-dd HH:mm:ss"
+              date:["2022-09-01 00:00:00","2022-12-21 08:00:00"],//"yyyy-MM-dd HH:mm:ss"
               // time:"",
           },
           numberOfEach:[],
@@ -116,7 +116,7 @@ export default {
             data: [
               { value: this.numberOfEach.hum1, name: "hum1" },
               { value: this.numberOfEach.temp1, name: "temp1" },
-              { value: this.numberOfEach.wlwtest, name: "wlwtest" },
+              { value: this.numberOfEach.RFID, name: "RFID" },
               // { value: 2, name: "hum1" },
               // { value:3, name: "temp1" },
               // { value: 4, name: "wlwtest" },
@@ -144,9 +144,9 @@ export default {
         dataset: {
           source: [
             ["product", "1", "2", "3", "4", "5", "6","7"],
-            ["hum1", 0.15,0.1,0,0,0,0,0],
-            ["temp1", 0.17,0,0.2,0.32,0.3,0.4,0],
-            ["wlwtest",0.1,0.23,0.10,0,0.45,0,0,0],
+            ["hum1", this.numberOfEach.hum1,0.1,0,0,0,0,0],
+            ["temp1", this.numberOfEach.temp1,0,0.2,0.32,0.3,0.4,0],
+            ["RFID",this.numberOfEach.RFID,0.23,0.10,0,0.45,0,0,0],
           ],
         },
         xAxis: { type: "category" },

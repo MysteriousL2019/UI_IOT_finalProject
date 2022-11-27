@@ -16,12 +16,12 @@
     <!-- 视图区 -->
     <el-card>
       <!-- 间隙 ,此处为按钮和搜索框间的距离-->
-      <el-row :gutter="30">
+      <el-row :gutter="25">
         <!-- 列宽 -->
         <!-- <div style="width:20%"> -->
-        <el-col :span="6">
+        <el-col :span="4">
           <!-- 搜索添加 v-model是将按钮提供数据绑定，@clear是将搜索栏清楚后，也要将搜出来的数据清楚 -->
-            <el-input placeholder="请输入temp1 wlwtest hum1" v-model="queryInfo.query" clearable @clear="getDeviceList">
+            <el-input placeholder="请输入temp1 hum1 RFID" v-model="queryInfo.query" clearable @clear="getDeviceList">
             <!-- <el-input placeholder="请输入搜索内容" > -->
               <el-button slot="append" icon="el-icon-search" @click="getDeviceList"></el-button>
             </el-input>
@@ -29,7 +29,7 @@
         <!-- </div> -->
         
         <!-- 时间的选择 -->
-        <el-col :span="7">
+        <el-col :span="8">
             <!-- <div class="block" > -->
                 <el-date-picker
                 v-model="queryInfo.date"
@@ -43,7 +43,7 @@
 
         </el-col>
 
-         <el-col :span="2">
+         <el-col :span="3">
             <el-button type="primary" icon="el-icon-search" @click="searchClick" round>search</el-button>
          </el-col>
 
@@ -99,15 +99,17 @@
 import * as XLSX from 'xlsx'
 import FileSaver from 'file-saver'
 export default{
-
+  created(){
+    this.getDeviceList();
+  },
     data(){
         return {
              // 查询信息的实体
           queryInfo:{
-              query:"",//查询信息
+              query:"temp1",//查询信息
               pageNum:1,//当前页
               pageSize:5,//每页的最大数
-              date:["2022-05-01 00:00:00","2022-11-21 08:00:00"],//"yyyy-MM-dd HH:mm:ss"
+              date:["2022-09-15 00:00:00","2022-12-21 08:00:00"],//"yyyy-MM-dd HH:mm:ss"
               // time:"",
           },
 

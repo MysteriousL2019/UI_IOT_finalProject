@@ -40,7 +40,15 @@ const frameIn = [
         },
         component: _import('demo/page2')
       },
-
+      {
+        path: 'page3',
+        name: 'page3',
+        meta: {
+          title: '查询展现',
+          auth: true
+        },
+        component: _import('demo/page3')
+      },
       // 系统 前端日志
       {
         path: 'log',
